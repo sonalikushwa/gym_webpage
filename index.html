@@ -2,77 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PowerFit Gym</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>FitPulse Gym</title>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <!-- Navigation -->
   <header class="navbar">
-    <div class="logo">PowerFit</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#trainers">Trainers</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="logo">FitPulse</div>
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#services">Services</a>
+      <a href="#trainers">Trainers</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+    </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-text">
-      <h1>Push Your Limits</h1>
-      <p>Join the strongest community in town</p>
-      <a href="#contact" class="btn">Join Now</a>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="content">
+      <h1>Elevate Your Strength</h1>
+      <p>Empower your mind, body, and spirit with us.</p>
+      <a href="#pricing" class="btn">Get Started</a>
     </div>
   </section>
 
+  <!-- Services -->
   <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-boxes">
-      <div class="service">
-        <h3>Personal Training</h3>
-        <p>One-on-one sessions with expert trainers.</p>
-      </div>
-      <div class="service">
-        <h3>Group Classes</h3>
-        <p>HIIT, Yoga, Zumba, and more!</p>
-      </div>
-      <div class="service">
-        <h3>Nutrition Plans</h3>
-        <p>Customized diet plans to meet your goals.</p>
-      </div>
+    <h2>What We Offer</h2>
+    <div class="grid">
+      <div class="card"><div class="icon">💪</div><h3>Strength Training</h3><p>Personalized routines for gains.</p></div>
+      <div class="card"><div class="icon">🧘</div><h3>Yoga</h3><p>Balance your body & mind.</p></div>
+      <div class="card"><div class="icon">🏃</div><h3>Cardio</h3><p>Boost endurance fast.</p></div>
+      <div class="card"><div class="icon">🥗</div><h3>Nutrition</h3><p>Custom meal plans.</p></div>
     </div>
   </section>
 
+  <!-- Trainers -->
   <section class="trainers" id="trainers">
     <h2>Meet Our Trainers</h2>
-    <div class="trainer-list">
-      <div class="trainer">
-        <img src="https://via.placeholder.com/150" alt="Trainer 1">
-        <h4>Alex Strong</h4>
-        <p>Strength & Conditioning</p>
+    <div class="scrolling-wrapper">
+      <div class="trainer-card"><img src="https://via.placeholder.com/200" alt="Alex"><h4>Alex Strong</h4><p>Strength</p></div>
+      <div class="trainer-card"><img src="https://via.placeholder.com/200" alt="Lisa"><h4>Lisa Flex</h4><p>Yoga</p></div>
+      <div class="trainer-card"><img src="https://via.placeholder.com/200" alt="Mike"><h4>Mike Speed</h4><p>Cardio</p></div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <h2>Choose Your Plan</h2>
+    <div class="pricing-grid">
+      <div class="plan">
+        <h3>Basic</h3><p class="amount">$29/mo</p>
+        <ul><li>Access to gym</li><li>1 group class</li></ul>
+        <button class="btn">Join Basic</button>
       </div>
-      <div class="trainer">
-        <img src="https://via.placeholder.com/150" alt="Trainer 2">
-        <h4>Lisa Fit</h4>
-        <p>Yoga & Flexibility</p>
+      <div class="plan featured">
+        <h3>Premium</h3><p class="amount">$59/mo</p>
+        <ul><li>Unlimited classes</li><li>1 Personal Session</li><li>Nutrition plan</li></ul>
+        <button class="btn">Go Premium</button>
+      </div>
+      <div class="plan">
+        <h3>Pro</h3><p class="amount">$99/mo</p>
+        <ul><li>All Premium perks</li><li>Weekly trainer</li><li>Custom nutrition & coaching</li></ul>
+        <button class="btn">I'm Pro</button>
       </div>
     </div>
   </section>
 
+  <!-- Contact -->
   <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
+    <h2>Get In Touch</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
       <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <button type="submit" class="btn">Send</button>
     </form>
+    <div id="msg" class="msg"></div>
   </section>
 
   <footer>
-    <p>© 2025 PowerFit Gym. All rights reserved.</p>
+    <p>© 2025 FitPulse Gym</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
